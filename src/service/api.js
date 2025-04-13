@@ -12,7 +12,7 @@ export default async (ctx) => {
 
     if (!p.get_provider_list().includes(server) || !p.get(server).support_type.includes(type)) {
         ctx.status(400)
-        return ctx.json({ status: 400, message: 'server 参数不合法', param: { server, type, id } })
+        return ctx.json({ status: 400, message: 'server 参数不合法.', param: { server, type, id } })
     }
 
     let data = await p.get(server).handle(type, id)
